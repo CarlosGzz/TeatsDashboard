@@ -414,7 +414,7 @@
                                             </div>
                                             <div class="col-xs-8">
                                                 <div class="progress progress_sm">
-                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="89"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xs-2 more_info">
@@ -428,7 +428,7 @@
                                             </div>
                                             <div class="col-xs-8">
                                                 <div class="progress progress_sm">
-                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="79"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xs-2 more_info">
@@ -442,7 +442,7 @@
                                             </div>
                                             <div class="col-xs-8">
                                                 <div class="progress progress_sm">
-                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="69"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="10"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xs-2 more_info">
@@ -456,7 +456,7 @@
                                             </div>
                                             <div class="col-xs-8">
                                                 <div class="progress progress_sm">
-                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="6"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xs-2 more_info">
@@ -470,7 +470,7 @@
                                             </div>
                                             <div class="col-xs-8">
                                                 <div class="progress progress_sm">
-                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="69"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="4"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xs-2 more_info">

@@ -3,13 +3,12 @@
 	class conexion{
 
 		private $conexion;
-		private $server = "localhost";
-		private $username = "treats";
-		private $password = "treats1";
-		private $dbname = "Treats";
+		private $server = "us-cdbr-iron-east-03.cleardb.net";
+		private $username = "b6450cfb82ab99";
+		private $password = "85853dd0";
+		private $dbname = "heroku_a98a40c69d50d5a";
 		private $user;
 		private $pass;
-
 
 
 		public function __construct(){
@@ -33,7 +32,7 @@
 			$this->pass = $pass;
 
 			$query = "SELECT usuario, contrasena, nombre, correo, imagen
-					  FROM Administrador 
+					  FROM administrador 
 					  WHERE usuario= '".$this->user."' and contrasena='".$this->pass."'";
 
 			$consulta = $this->conexion->query($query);
