@@ -24,12 +24,12 @@
 
   <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../fonts/css/font-awesome.min.css" rel="stylesheet">
   <link href="../../css/animate.min.css" rel="stylesheet">
 
   <!-- Custom styling plus plugins -->
   <link href="../../css/custom.css" rel="stylesheet">
-  <link href="c../../ss/icheck/flat/green.css" rel="stylesheet">
+  <link href="../../css/icheck/flat/green.css" rel="stylesheet">
 
 
   <script src="../../js/jquery.min.js"></script>
@@ -56,15 +56,17 @@
 
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-         <div class="navbar nav_title" style="border: 0;">
-            <a href="../index.php" class="site_title"><img id="mainIcon" style="width:30px;height:30px" src="../IMG/diamond.ico" alt="Diamond"><span>Treats Dashboard</span></a>
-         </div>
-          <div class="clearfix"></div>
+      <!--Titulo del app-->
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.php" class="site_title"><img id="mainIcon" style="width:30px;height:30px" src="../IMG/diamond.ico" alt="Diamond"><span>Treats Dashboard</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--/Titulo del app-->
 
-          <!-- menu prile quick info -->
+                    <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="profile.jpg" alt="..." class="img-circle profile_img">
+                            <img src="../IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
@@ -85,19 +87,19 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-bar-chart"></i>Dashboard <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="empty.html">Overview</a>
+                                        <li><a href="../../">Overview</a>
                                         </li>
-                                        <li><a href="empty.html">Compara</a>
+                                        <li><a href="../Dashboard/compara.php">Compara</a>
                                         </li>
-                                        <li><a href="empty.html">Encuestas</a>
+                                        <li><a href="../Dashboard/encuestas.php">Encuestas</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-gift"></i>Treats <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="../Treats/treats.php">Treats Data</a>
+                                        <li><a href="../Treats/treatsData.php">Treats Data</a>
                                         </li>
-                                        <li><a href="../Treats/edit.php">Edit</a>
+                                        <li><a href="../Treats/editTreat.php">Edit</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -105,11 +107,11 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="../Actividad/feed.php">Feed</a>
                                         </li>
-                                        <li><a href="../Actividad/feed.php">Photos</a>
+                                        <li><a href="../Actividad/fotos.php">Photos</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
+                                <li><a href="../Mas/index.php"><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
                                 </li>
                             </ul>
                         </div>
@@ -146,21 +148,17 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="profile.jpg" alt=""><?php echo $_SESSION['nombre'];?>
+                                    <img src="../IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" alt=""><?php echo $_SESSION['nombre'];?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="javascript:;">Profile</a>
+                                    <li>
+                                      <a href="#">Profile</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">
-                                            <span>Settings</span>
-                                        </a>
+                                        <a href="help.php">Help</a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:;">Help</a>
-                                    </li>
-                                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    <li><a href="../../login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                     </li>
                                 </ul>
                             </li>
@@ -227,7 +225,7 @@
                       <div id="crop-avatar">
                         <!-- Current avatar -->
                         <div class="avatar-view" title="Change the avatar">
-                          <img src="images/picture.jpg" alt="Avatar">
+                          <img src="../IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" alt="Avatar">
                         </div>
 
                         <!-- Cropping modal -->
@@ -380,7 +378,7 @@
                           <!-- start recent activity -->
                           <ul class="messages">
                             <li>
-                              <img src="images/img.jpg" class="avatar" alt="Avatar">
+                              <img src="../IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" class="avatar" alt="Avatar">
                               <div class="message_date">
                                 <h3 class="date text-info">24</h3>
                                 <p class="month">May</p>
@@ -547,33 +545,50 @@
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
 
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
   
   <!-- bootstrap progress js -->
-  <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
-  <script src="js/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="../../js/progressbar/bootstrap-progressbar.min.js"></script>
+  <script src="../../js/nicescroll/jquery.nicescroll.min.js"></script>
   <!-- icheck -->
-  <script src="js/icheck/icheck.min.js"></script>
+  <script src="../../js/icheck/icheck.min.js"></script>
 
-  <script src="js/custom.js"></script>
+  <script src="../../js/custom.js"></script>
 
   <!-- image cropping -->
-  <script src="js/cropping/cropper.min.js"></script>
-  <script src="js/cropping/main.js"></script>
+  <script src="../../js/cropping/cropper.min.js"></script>
+  <script src="../../js/cropping/main.js"></script>
 
   <!-- daterangepicker -->
-  <script type="text/javascript" src="js/moment/moment.min.js"></script>
-  <script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="../../js/moment/moment.min.js"></script>
+  <script type="text/javascript" src="../../js/datepicker/daterangepicker.js"></script>
 
   <!-- chart js -->
-  <script src="js/chartjs/chart.min.js"></script>
+  <script src="../../js/chartjs/chart.min.js"></script>
 
   <!-- moris js -->
-  <script src="js/moris/raphael-min.js"></script>
-  <script src="js/moris/morris.min.js"></script>
+  <script src="../../js/moris/raphael-min.js"></script>
+  <script src="../../js/moris/morris.min.js"></script>
 
   <!-- pace -->
-  <script src="js/pace/pace.min.js"></script>
+  <script src="../../js/pace/pace.min.js"></script>
+
+  <!-- Script para hacer mas grande el icono --> 
+    <script>
+        var x=1;
+        $("#menu_toggle").click(function(){
+            if(x==1){
+                $('#mainIcon').width(45);
+                $('#mainIcon').height(45);
+                x=0;
+            }else
+                if(x==0){
+                    $('#mainIcon').width(30);
+                    $('#mainIcon').height(30);
+                    x=1;
+                }
+        }); 
+    </script>
 
   <script>
     $(function() {

@@ -57,15 +57,17 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
+                    <!--Titulo del app-->
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="index.php" class="site_title"><img id="mainIcon" style="width:30px;height:30px" src="Vista/IMG/diamond.ico" alt="Diamond"><span>Treats Dashboard</span></a>
                     </div>
                     <div class="clearfix"></div>
+                    <!--/Titulo del app-->
 
                     <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="profile.jpg" alt="..." class="img-circle profile_img">
+                            <img src="Vista/IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
@@ -86,31 +88,31 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-bar-chart"></i>Dashboard <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="empty.html">Overview</a>
+                                        <li><a href="#">Overview</a>
                                         </li>
-                                        <li><a href="empty.html">Compara</a>
+                                        <li><a href="Vista/Dashboard/compara.php">Compara</a>
                                         </li>
-                                        <li><a href="empty.html">Encuestas</a>
+                                        <li><a href="Vista/Dashboard/encuestas.php">Encuestas</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-gift"></i>Treats <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="empty.html">Treats Data</a>
+                                        <li><a href="Vista/Treats/treatsData.php">Treats Data</a>
                                         </li>
-                                        <li><a href="empty.html">Edit</a>
+                                        <li><a href="Vista/Treats/editTreat.php">Edit</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-clock-o"></i>Activity <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="empty.html">Feed</a>
+                                        <li><a href="Vista/Actividad/feed.php">Feed</a>
                                         </li>
-                                        <li><a href="empty.html">Photos</a>
+                                        <li><a href="Vista/Actividad/fotos.php">Photos</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
+                                <li><a href="Vista/Mas/index.php"><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
                                 </li>
                             </ul>
                         </div>
@@ -147,21 +149,18 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="profile.jpg" alt=""><?php echo $_SESSION['nombre'];?>
+                                    <img src="Vista/IMG/profile<?php echo $_SESSION['usuario'];?>.jpg" alt=""><?php echo $_SESSION['nombre'];?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="javascript:;">Profile</a>
+                                    <li>
+                                        <a href="Vista/Perfil/">Profile</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">
-                                            <span>Settings</span>
-                                        </a>
+                                        <a href="Vista/Perfil/help.php">Help</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Help</a>
-                                    </li>
-                                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                        <a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                     </li>
                                 </ul>
                             </li>
@@ -195,6 +194,7 @@
                             <span>Total Activity</span>
                             <h2>30,000</h2>
                             <span class="sparkline_three" style="height: 160px;"><canvas width="200" height="40" style="display: inline-block; width: 200px; height: 40px; vertical-align: top;"></canvas></span>
+                            <p>Semana en curso 15-29</p><!--Falta php con las horas que habre este establecimiento-->
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-6 tile">
                             <span>Usuario de la Semana</span>
@@ -214,7 +214,7 @@
                             <div class="dashboard_graph x_panel">
                                 <div class="row x_title">
                                     <div class="col-md-6">
-                                        <h3>Social Print<small>Actividad en linea</small></h3>
+                                        <h3>Social Print <small>Actividad en linea</small></h3>
                                     </div>
                                     <div class="col-md-6">
                                         <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
@@ -224,9 +224,7 @@
                                     </div>
                                 </div>
                                 <div class="x_content">
-                                         <!--<div id="graph_bar" style="width:100%; height:280px;"></div>-->
-                                         <div id="placeholder3xx3" class="demo-placeholder" style="width: 100%; height:250px;"></div>
-                                    
+                                    <div id="placeholder3xx3" class="demo-placeholder" style="width: 100%; height:250px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -482,6 +480,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--/Treats Redeeemed Level 1-->
                     </div>
                 </div>
 
@@ -585,7 +584,7 @@
     <script>
         $('document').ready(function () {
 
-            var doughnutData = [
+            var edadesDoughnutData = [
                 {
                     value: 98,
                     color: "#3498DB"
@@ -607,9 +606,9 @@
                     color: "#E74C3C"
                 }
              ];
-            var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+            var edadesDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(edadesDoughnutData);
 
-            var doughnutData2 = [
+            var hombresMujeresPieData = [
                 {
                     value: 104,
                     color: "#3498Db"
@@ -619,11 +618,48 @@
                     color: "#1ABB9C"
                 }
              ];
-            var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Pie(doughnutData2);
-
-
+            var hombresMujeresPie = new Chart(document.getElementById("canvas2").getContext("2d")).Pie(hombresMujeresPieData);
         })
     </script>
+     <!-- Social Activity chart moris js -->
+    <script src="js/moris/raphael-min.js"></script>
+    <script src="js/moris/morris.js"></script>
+    <script>
+        $(function () {
+            Morris.Bar({
+            element: 'placeholder3xx3',
+            data: [
+                {socialActivity: 'Facebook Post', total: <?php echo 300;?>},
+                {socialActivity: 'Facebook Photo', total: 137},
+                {socialActivity: 'Twitter Post', total: 275},
+                {socialActivity: 'Twitter Follow', total: 380},
+                {socialActivity: 'Instagram Photo', total: 100},
+                {socialActivity: 'Instagram Follow', total: 275},
+                {socialActivity: 'Check In', total: 400}
+            ],
+            xkey: 'socialActivity',
+            ykeys: ['total'],
+            labels: ['Total'],
+            barRatio: 0.4,
+
+            barColors: function (row, series, type) {
+                            //console.log("--> "+row.label, series, type);
+                            if(row.label == "Facebook Post") return "#758AB7";
+                            else if(row.label == "Facebook Photo") return "#758AB7";
+                            else if(row.label == "Twitter Post") return "#88C5F3";
+                            else if(row.label == "Twitter Follow") return "#88C5F3";
+                            else if(row.label == "Instagram Photo") return "#FF7064";
+                            else if(row.label == "Instagram Follow") return "#FF7064";
+                            else if(row.label == "Check In") return "#FFCA7E";
+                        },
+            xLabelAngle: 20,
+            hideHover: 'auto',
+            resize : true,
+            redraw: true
+        });
+    });
+    </script>
+    <!-- /Social Activity chart moris js -->
     <!-- datepicker -->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -698,38 +734,6 @@
         });
     </script>
     <!-- /datepicker -->
-
-    <!-- moris js -->
-    <script src="js/moris/raphael-min.js"></script>
-    <script src="js/moris/morris.js"></script>
-    <script>
-        $(function () {
-            Morris.Bar({
-            element: 'placeholder3xx3',
-            data: [
-                {device: 'iPhone', geekbench: <?php echo 655;?>},
-                {device: 'iPhone 3G', geekbench: 137},
-                {device: 'iPhone 3GS', geekbench: 275},
-                {device: 'iPhone 4', geekbench: 380},
-                {device: 'iPhone 4S', geekbench: 655},
-                {device: 'iPhone 3GS', geekbench: 275},
-                {device: 'iPhone 4', geekbench: 380},
-                {device: 'iPhone 4S', geekbench: 655},
-                {device: 'iPhone 5', geekbench: 1571}
-            ],
-            xkey: 'device',
-            ykeys: ['geekbench'],
-            labels: ['Total'],
-            barRatio: 0.4,
-
-            barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-            xLabelAngle: 35,
-            hideHover: 'auto',
-            resize : true,
-            redraw: true
-        });
-    });
-    </script>
 </body>
 
 </html>

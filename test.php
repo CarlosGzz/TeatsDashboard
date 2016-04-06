@@ -386,9 +386,9 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
+                                                <li><a href="#">Nivel 2</a>
                                                 </li>
-                                                <li><a href="#">Settings 2</a>
+                                                <li><a href="#">Nivel 3</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -488,7 +488,8 @@
                 <!-- footer content -->
                 <footer>
                     <div class="">
-                        <p class="pull-right">Treats Enterprise Dashboard | Made with love by the CIO
+                        <p class="pull-right">
+                            Treats Enterprise Dashboard | Made with love by the CIO
                         </p>
                     </div>
                     <div class="clearfix"></div>
@@ -545,6 +546,7 @@
                 }
         }); 
     </script>
+    <!-- /Script para hacer mas grande el icono --> 
     <!--JS necesario para las barras de arriba que incluyen los datos generales  Sparkcharts-->
     <script>
         $('document').ready(function () {
@@ -579,13 +581,13 @@
                 barColor: '#26B99A'
             });
         });
-
     </script>
+    <!--/JS necesario para las barras de arriba que incluyen los datos generales  Sparkcharts-->
     <!-- Script para llenar la informacion de las ChartJS -->
     <script>
         $('document').ready(function () {
 
-            var doughnutData = [
+            var edadesDoughnutData = [
                 {
                     value: 98,
                     color: "#3498DB"
@@ -607,9 +609,9 @@
                     color: "#E74C3C"
                 }
              ];
-            var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+            var edadesDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(edadesDoughnutData);
 
-            var doughnutData2 = [
+            var hombresMujeresPieData = [
                 {
                     value: 104,
                     color: "#3498Db"
@@ -619,11 +621,48 @@
                     color: "#1ABB9C"
                 }
              ];
-            var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Pie(doughnutData2);
-
-
+            var hombresMujeresPie = new Chart(document.getElementById("canvas2").getContext("2d")).Pie(hombresMujeresPieData);
         })
     </script>
+     <!-- Social Activity chart moris js -->
+    <script src="js/moris/raphael-min.js"></script>
+    <script src="js/moris/morris.js"></script>
+    <script>
+        $(function () {
+            Morris.Bar({
+            element: 'placeholder3xx3',
+            data: [
+                {socialActivity: 'Facebook Post', total: <?php echo 300;?>},
+                {socialActivity: 'Facebook Photo', total: 137},
+                {socialActivity: 'Twitter Post', total: 275},
+                {socialActivity: 'Twitter Follow', total: 380},
+                {socialActivity: 'Instagram Photo', total: 100},
+                {socialActivity: 'Instagram Follow', total: 275},
+                {socialActivity: 'Check In', total: 400}
+            ],
+            xkey: 'socialActivity',
+            ykeys: ['total'],
+            labels: ['Total'],
+            barRatio: 0.4,
+
+            barColors: function (row, series, type) {
+                            //console.log("--> "+row.label, series, type);
+                            if(row.label == "Facebook Post") return "#758AB7";
+                            else if(row.label == "Facebook Photo") return "#758AB7";
+                            else if(row.label == "Twitter Post") return "#88C5F3";
+                            else if(row.label == "Twitter Follow") return "#88C5F3";
+                            else if(row.label == "Instagram Photo") return "#FF7064";
+                            else if(row.label == "Instagram Follow") return "#FF7064";
+                            else if(row.label == "Check In") return "#FFCA7E";
+                        },
+            xLabelAngle: 20,
+            hideHover: 'auto',
+            resize : true,
+            redraw: true
+        });
+    });
+    </script>
+    <!-- /Social Activity chart moris js -->
     <!-- datepicker -->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -698,38 +737,6 @@
         });
     </script>
     <!-- /datepicker -->
-
-    <!-- moris js -->
-    <script src="js/moris/raphael-min.js"></script>
-    <script src="js/moris/morris.js"></script>
-    <script>
-        $(function () {
-            Morris.Bar({
-            element: 'placeholder3xx3',
-            data: [
-                {device: 'iPhone', geekbench: <?php echo 655;?>},
-                {device: 'iPhone 3G', geekbench: 137},
-                {device: 'iPhone 3GS', geekbench: 275},
-                {device: 'iPhone 4', geekbench: 380},
-                {device: 'iPhone 4S', geekbench: 655},
-                {device: 'iPhone 3GS', geekbench: 275},
-                {device: 'iPhone 4', geekbench: 380},
-                {device: 'iPhone 4S', geekbench: 655},
-                {device: 'iPhone 5', geekbench: 1571}
-            ],
-            xkey: 'device',
-            ykeys: ['geekbench'],
-            labels: ['Total'],
-            barRatio: 0.4,
-
-            barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-            xLabelAngle: 35,
-            hideHover: 'auto',
-            resize : true,
-            redraw: true
-        });
-    });
-    </script>
 </body>
 
 </html>

@@ -31,7 +31,7 @@
 			$this->user = $user;
 			$this->pass = $pass;
 
-			$query = "SELECT usuario, contrasena, nombre, correo, imagen
+			$query = "SELECT usuario, contrasena, nombre, correo, idLugar
 					  FROM administrador 
 					  WHERE usuario= '".$this->user."' and contrasena='".$this->pass."'";
 
@@ -43,7 +43,7 @@
 					$_SESSION['usuario']= $row['usuario'];
 					$_SESSION['nombre']= $row['nombre'];
 					$_SESSION['correo']= $row['correo'];
-					$_SESSION['imagen']= $row['imagen'];
+					$_SESSION['idLugar']= $row['idLugar'];
 					echo "index.php";
 
 
