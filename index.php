@@ -112,8 +112,19 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="Vista/Mas/index.php"><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
+                                <li><a href="Vista/Mas"><i class="fa fa-question"></i>¿Que mas te gustaria ver?</a>
                                 </li>
+                                <?php
+                                    if($_SESSION["usuario"] == "superadmin"){
+                                        echo "
+                                             <li>
+                                                <a href="Vista/AdminSite">
+                                                    <i class="fa fa-code"></i>AdminSite
+                                                </a>
+                                             </li>
+                                             ";
+                                    }
+                                ?>
                             </ul>
                         </div>
                     </div>
