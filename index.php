@@ -118,8 +118,8 @@
                                     if($_SESSION["usuario"] == "superadmin"){
                                         echo "
                                              <li>
-                                                <a href="Vista/AdminSite">
-                                                    <i class="fa fa-code"></i>AdminSite
+                                                <a href='Vista/AdminSite'>
+                                                    <i class='fa fa-code'></i>AdminSite
                                                 </a>
                                              </li>
                                              ";
