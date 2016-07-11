@@ -3,8 +3,8 @@
 	
 	if(isset($_POST)){
 		if(!empty($_POST['latitud']) && !empty($_POST['longitud']) ){
-			$latitud = $_POST['latitud'];
-			$longitud = $_POST['longitud'];
+			$latitud = trim($_POST['latitud'],"Optional()");
+			$longitud = trim($_POST['longitud'],"Optional()");
 		}else{
 			$latitud = 25.655549;
 			$longitud = -100.391763;
@@ -14,7 +14,7 @@
 		$longitud = -100.391763;
 	}
 
-	$resultset = $db->query("CALL `Treats`.`geoDist`(10, $latitud, $longitud);");
+	$resultset = $db->query("CALL `Treats`.`geoDist2`(10, $latitud, $longitud);");
 	//var_dump($resultset);
 	$places= array();
 			
