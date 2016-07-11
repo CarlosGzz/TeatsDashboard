@@ -1,5 +1,5 @@
 <?php
-	require "../Modelo/connect2.php";
+	require "../Modelo/connect.php";
 	
 	if(isset($_POST)){
 		if(!empty($_POST['latitud']) && !empty($_POST['longitud']) ){
