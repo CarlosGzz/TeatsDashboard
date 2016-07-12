@@ -14,7 +14,7 @@
 		$longitud = -100.391763;
 	}
 
-	$resultset = $db->query("CALL `Treats`.`geoDist`(10, $latitud, $longitud);");
+	$resultset = $db->query("CALL `heroku_a98a40c69d50d5a`.`geoDist`(10, $latitud, $longitud);");
 	//var_dump($resultset);
 	$places= array();
 			
